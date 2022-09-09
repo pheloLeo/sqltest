@@ -75,18 +75,16 @@
 <br>insert into accounts values (3, 'Карточный счет для Петровым С.И.', 125000, 3, STR_TO_DATE('01.08.2017','%d.%m.%Y'), null, 3, '40817810700000000001');
 <br>insert into accounts values (4, 'Кредитный счет для Ивановым П.С.', -3000, 2, STR_TO_DATE('02.08.2017','%d.%m.%Y'), null, 1, '42301810400000000023');
 <br>insert into accounts values (5, 'Депозитный счет для Петровым С.И.', 4000, 3, STR_TO_DATE('02.08.2017','%d.%m.%Y'), null, 2, '40817810700000000024');
+<br>
 <br>insert into records values (1, 1, 5000, 1, STR_TO_DATE('01.06.2015','%d.%m.%Y'));
 <br>insert into records values (2, 0, 1000, 1, STR_TO_DATE('01.07.2015','%d.%m.%Y'));
 <br>insert into records values (3, 0, 2000, 1, STR_TO_DATE('01.08.2015','%d.%m.%Y'));
 <br>insert into records values (4, 0, 3000, 1, STR_TO_DATE('01.09.2015','%d.%m.%Y'));
 <br>insert into records values (5, 1, 5000, 1, STR_TO_DATE('01.10.2015','%d.%m.%Y'));
-<br>
 <br>insert into records values (6, 0, 3000, 1, STR_TO_DATE('01.10.2015','%d.%m.%Y'));
-<br>
 <br>insert into records values (7, 0, 10000, 2, STR_TO_DATE('01.08.2017','%d.%m.%Y'));
 <br>insert into records values (8, 1, 1000, 2, STR_TO_DATE('05.08.2017','%d.%m.%Y'));
 <br>insert into records values (9, 1, 2000, 2, STR_TO_DATE('21.09.2017','%d.%m.%Y'));
-<br>
 <br>insert into records values (10, 1, 5000, 2, STR_TO_DATE('24.10.2017','%d.%m.%Y'));
 <br>insert into records values (12, 0, 120000, 3, STR_TO_DATE('08.09.2017','%d.%m.%Y'));
 <br>insert into records values (13, 1, 1000, 3, STR_TO_DATE('05.10.2017','%d.%m.%Y'));
@@ -99,7 +97,6 @@
 <br>insert into records values (19, 0, 5000, 5, STR_TO_DATE('24.10.2017','%d.%m.%Y'));
 <br>insert into records values (20, 0, 2000, 4, STR_TO_DATE('24.10.2017','%d.%m.%Y'));
 <br>insert into records values (21, 1, 1000, 5, STR_TO_DATE('24.10.2017','%d.%m.%Y'));
-<br>
 <br>insert into records values (22, 0, 11000, 2, STR_TO_DATE('01.09.2022','%d.%m.%Y'));
 <br>insert into records values (23, 0, 12000, 2, STR_TO_DATE('01.09.2022','%d.%m.%Y'));
 <br>insert into records values (24, 0, 13000, 2, STR_TO_DATE('01.09.2022','%d.%m.%Y'));
@@ -107,7 +104,6 @@
 <br>insert into records values (26, 0, 5000, 3, STR_TO_DATE('2.09.2022','%d.%m.%Y'));
 <br>insert into records values (27, 0, 3000, 3, STR_TO_DATE('2.09.2022','%d.%m.%Y'));
 <br>insert into records values (28, 0, 1000, 3, STR_TO_DATE('1.09.2022','%d.%m.%Y'));
-<br>
 <br>
 ## 4.
   Сформируйте отчет, который содержит все счета, относящиеся к продуктам <br>типа ДЕПОЗИТ, принадлежащих клиентам, у которых нет открытых продуктов типа КРЕДИТ.<br>
@@ -199,14 +195,4 @@
 ![Screenshot_6](https://user-images.githubusercontent.com/113181404/189383839-2485f5c2-4f57-4876-b816-73b0401c5e46.png)
      
 ## 11.
-
-
-
-
-
-
-
-
-
-
 
