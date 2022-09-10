@@ -75,6 +75,8 @@
 <br>insert into accounts values (3, 'Карточный счет для Петровым С.И.', 125000, 3, STR_TO_DATE('01.08.2017','%d.%m.%Y'), null, 3, '40817810700000000001');
 <br>insert into accounts values (4, 'Кредитный счет для Ивановым П.С.', -3000, 2, STR_TO_DATE('02.08.2017','%d.%m.%Y'), null, 1, '42301810400000000023');
 <br>insert into accounts values (5, 'Депозитный счет для Петровым С.И.', 4000, 3, STR_TO_DATE('02.08.2017','%d.%m.%Y'), null, 2, '40817810700000000024');
+<br>insert into accounts values (6, 'Кредитный счет для Сидоровым И.П.', -8000, 1, STR_TO_DATE('01.08.2017','%d.%m.%Y'), null, 1, '40817810700000000023');
+<br>insert into accounts values (7, 'Кредитный счет для Ивановым П.С.', 0, 2, STR_TO_DATE('01.02.2017','%d.%m.%Y'), null, 1, '42301810400000000004');
 <br>
 <br>insert into records values (1, 1, 5000, 1, STR_TO_DATE('01.06.2015','%d.%m.%Y'));
 <br>insert into records values (2, 0, 1000, 1, STR_TO_DATE('01.07.2015','%d.%m.%Y'));
@@ -179,6 +181,20 @@
 <br>Результат<br>
 ![Screenshot_3](https://user-images.githubusercontent.com/113181404/189382540-13adfaeb-ee0e-4cf6-9c72-6b069e3557a0.png)
 ## 9.
+Закройте продукты (установите дату закрытия равную текущей) типа КРЕДИТ, у которых произошло полное погашение, но при этом не было повторной выдачи.<br>
+<br>
+<br>update accounts as a1
+<br>set a1.close_date = CURRENT_DATE()
+<br>where id in (select * from (select a2.id from (select * from accounts where saldo = 0 and close_date is null) as a2
+<br>where not exists (select * from accounts as a3 where saldo < 0 and a2.client_ref = a3.client_ref AND a3.close_date is null))as a4)
+<br>
+
+##### Решение:<br> Нужно найти всех тех, у кого saldo = 0 и close_date = null это первая таблица в подзапросе.Во второй таблице все клиенты с непогашенными кредитами. Мы ищем во второй таблице сходства с первой по каждому клиенту. Если клиента нет во второй таблице(но есть в первой) - меняем у него дату на сегодняшнюю.<br>
+<br>Что отдает подзапрос<br>
+![Screenshot_2](https://user-images.githubusercontent.com/113181404/189486930-d845dd92-cde4-4132-8513-2efebbdcaff0.png)
+<br>Начальная таблица<br>
+![Screenshot_5](https://user-images.githubusercontent.com/113181404/189486955-6271ec7b-ec96-4770-a10b-3deb46436b8a.png)
+<br>
 ## 10.
 Закройте возможность открытия (установите дату окончания действия) для типов продуктов, по счетам продуктов которых, не было движений более одного месяца.<br>
 <br>update accounts as a1
