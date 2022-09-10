@@ -194,6 +194,8 @@
 ![Screenshot_2](https://user-images.githubusercontent.com/113181404/189486930-d845dd92-cde4-4132-8513-2efebbdcaff0.png)
 <br>Начальная таблица<br>
 ![Screenshot_5](https://user-images.githubusercontent.com/113181404/189486955-6271ec7b-ec96-4770-a10b-3deb46436b8a.png)
+<br>Результат<br>
+![Screenshot_6](https://user-images.githubusercontent.com/113181404/189487094-293181be-84f9-45b3-a316-7bcf601b5d90.png)
 <br>
 ## 10.
 Закройте возможность открытия (установите дату окончания действия) для типов продуктов, по счетам продуктов которых, не было движений более одного месяца.<br>
